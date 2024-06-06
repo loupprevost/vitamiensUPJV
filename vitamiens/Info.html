@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/002d626c4c.js" crossorigin="anonymous"></script>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Vit'Amiens</title>
+        <link rel="icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <meta name="description" content="Map interactive du Pole science à Amiens pour les jeunes étudiants"/>
+        <meta name="author" content="Loup Prévost, Libraire Alexandre, Saleh Amari"/>
+        <meta name="keywords" content="map interactive, amiens, étudiant, pôle science"/>
+    </head>
+
+    <body id="bodyInfo" style="background-image: url('data/img/fond.jpeg'); background-size: cover; background-position: center;">
+        <div id="topFooter">
+            <a href="index.html">  
+                <div id="banner">
+                    <img class="logo" src="data/img/logo.png" alt="Logo Vit'Amiens" title="Logo Vit'Amiens">
+                    <img class="logoUPJV" src="data/img/logoUPJV.png" alt="Logo de l'UPJV" title="Logo de l'UPJV">
+                    <p style="text-align: center;font-size:45px;font-family: Calibri, sans-serif;padding-top:0.5vh;"><b>VIT'AMIENS</b></p>
+                </div>
+            </a>
+
+            <div id="content">
+                <div  class="text-container">
+                    <p class="leftp" ><b>UFR des Sciences</b><br />
+                        Pôle scientifique<br />
+                        Saint-Leu<br />
+                        33, rue Saint-Leu<br />
+                        80039 Amiens<br />
+                        Tél. : 03 22 82 75 22<br />
+                        ufrsciences@u-picardie.fr
+                        <br /><br /><br />
+                        <b>Directrice</b><br />
+                        Françoise GILLET
+                        <br /><br /><br />
+                        <b>Directeurs adjoints</b><br />
+                        Frédéric COLLET<br />
+                        Stéphane CHARVET
+                        <br /><br /><br />
+                        <b>Directrice administrative</b><br />
+                        Cécile POIRET
+                        </p>
+                </div>
+                <div  class="text-container2">
+                    <p class="rightp" >
+                        &nbsp;&nbsp;Ce projet est réalisé dans le cadre de l'UE “Gestion de projets” lors de la première année de Master MIAGE.<br /><br /><br />
+                        &nbsp;&nbsp;Cette carte interactive est pensée pour les étudiants, par des étudiants. Elle a pour 
+                        but d'aider les nouveaux étudiants à se repérer au sein de l'UFR des Sciences de l'UPJV.<br /><br /><br /><br />
+                        &nbsp;&nbsp;Alexandre L. &nbsp;-&nbsp; Loup P.&nbsp; -&nbsp; Saleh A.
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <a href="index.html"><img class="retour" src="data/img/bouton-retour.png"></a>
+            <p style="text-align: center;font-size:21px;font-family: Calibri, sans-serif;">UFR DES SCIENCES - UPJV AMIENS</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jQuery-rwdImageMaps-master/jquery.rwdImageMaps.min.js"></script>
+        <script>
+            $(document).ready(function(e) {
+                $('img[usemap]').rwdImageMaps();
+            });
+        </script>
+    </body>
+</html>

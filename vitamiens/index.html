@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<script src="https://kit.fontawesome.com/002d626c4c.js" crossorigin="anonymous"></script>
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Vit'Amiens</title>
+        <link rel="icon" href="favicon.ico"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <meta name="description" content="Map interactive du Pole science à Amiens pour les jeunes étudiants"/>
+        <meta name="author" content="Loup Prévost, Libraire Alexandre, Saleh Amari"/>
+        <meta name="keywords" content="map interactive, amiens, étudiant, pôle science"/>
+    </head>
+    <body>
+        <div id="topFooter">
+            <a href="index.html">  
+                <div id="banner">
+                    <img class="logo" src="data/img/logo.png" alt="Logo Vit'Amiens" title="Logo Vit'Amiens">
+                    <img class="logoUPJV" src="data/img/logoUPJV.png" alt="Logo de l'UPJV" title="Logo de l'UPJV">
+                    <p style="text-align: center;font-size:45px;font-family: Calibri, sans-serif;padding-top:0.5vh;"><b>VIT'AMIENS</b></p>
+                </div>
+            </a>
+            <div id="content">
+                <form style="float:left;height: calc(100vh - 110px); width: calc(25% - 3px);border-right:3px solid black;  overflow: auto;">     
+                    <div class="searchContainer2">
+                        <select id="Zone" style="border:none;width:130px;">
+                            <option value="Centre" id="Centre">Centre</option>
+                            <option value="Poulie" id="Poulie">Poulies</option>
+                            <option value="Moulin_Neuf" id="Moulin_Neuf">Moulin Neuf</option>
+                            <option value="Minimes" id="Minimes">Minimes</option>
+                        </select>        
+                    </div>
+                    <div class="searchContainer">
+                        <input type="text" id="search" placeholder="Recherche dans UFR des Sciences..... " required>
+                        <div class="loupe" onclick="validateSearch()" onclick="validateNomIm()";"><i class="fa-solid fa-magnifying-glass fa-lg"  alt="rechercher"></i></div>
+                    </div>
+                    <p id="test"></p>
+                </form>
+                
+            
+                <div id="actualMap" style="float:left;height: calc(100vh - 110px); width: 75%;">
+                    <button id="planButton" class="planButton" style="display:none;">Revenir au plan</button>
+                    <div id="actualMapElement" style="height:100%;width:100%;">
+                        <img class="plan" usemap="#mapUFRSciences" src="data/img/map/UFRSciences.jpg" alt="Plan UFR des Sciences">
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div id="footer">
+            <a href="Info.html"><img class="infoLogo" src="data/img/info.png" alt="Plan UFR des Sciences"></a>
+            <p style="text-align: center;font-size:20px;font-family: Calibri, sans-serif;padding-top:0.5vh;">UFR DES SCIENCES - UPJV AMIENS</p>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/jQuery-rwdImageMaps-master/jquery.rwdImageMaps.min.js"></script>
+        <script>
+        $(document).ready(function(e) {
+                $('img[usemap]').rwdImageMaps();
+            });
+        </script>
+    </body>
+</html>
+
+
+<map name="mapUFRSciences">
+    <area shape="poly" id="A" onclick="changeActualMap('A');" coords="609,501,631,503,631,545,614,547,613,509,610,509" href="#" alt="Batiment A">
+    <area shape="poly" id="B" onclick="changeActualMap('B');" coords="443,508,564,504,565,518,443,522" href="#" alt="Batiment B">
+    <area shape="poly" id="BC" onclick="changeActualMap('BC');" coords="373,485,465,482,466,497,373,500" href="#" alt="Batiment BC">
+    <area shape="poly" id="C" onclick="changeActualMap('C');" coords="463,466,464,479,370,483,370,488,354,488,350,464,370,464,370,470" href="#" alt="Batiment C">
+    <area shape="poly" id="D" onclick="changeActualMap('D');" coords="527,408,605,405,605,425,528,428" href="#" alt="Batiment D">
+    <area shape="poly" id="E" onclick="changeActualMap('E');" coords="528,431,563,430,565,490,529,492" href="#" alt="Batiment E">
+    <area shape="poly" id="F" onclick="changeActualMap('F');" coords="368,353,407,353,407,421,368,421" href="#" alt="Batiment F">
+    <area shape="poly" id="G" onclick="changeActualMap('G');" coords="567,429,605,427,610,509,568,510,567,501,443,505,443,501,569,493" href="#" alt="Batiment G">
+    <area shape="poly" id="H" onclick="changeActualMap('H');" coords="476,344,528,344,528,385,476,385" href="#" alt="Batiment H">
+    <area shape="poly" id="I" onclick="changeActualMap('I');" coords="453,415,429,386,430,380,444,372,461,366,467,370,468,408,462,410" href="#" alt="Batiment I">
+    
+    <area shape="poly" id="M1" onclick="changeActualMap('M1');" coords="856,373,830,384,874,445,893,438,907,418,888,403,882,407" href="#" alt="Batiment M1">
+    <area shape="poly" id="M2" onclick="changeActualMap('M2');" coords="910,351,888,367,906,389,889,402,906,394,919,413,1007,354,989,342,1000,331,996,327,923,371" href="#" alt="Batiment M2">
+    <area shape="poly" id="M3" onclick="changeActualMap('M3');" coords="910,351,888,367,861,336,958,271,964,279,946,297,947,307,902,339" href="#" alt="Batiment M3">
+    <area shape="poly" id="M4" onclick="changeActualMap('M4');" coords="856,373,830,384,808,355,829,340,837,352,842,349,837,339,844,333,856,354" href="#" alt="Batiment M4">
+    <area shape="poly" id="M5" onclick="changeActualMap('M5');" coords="1020,352,963,267,996,243,1052,327" href="#" alt="Batiment M5">
+    <area shape="poly" id="M6" onclick="changeActualMap('M6');" coords="808,355,829,340,822,329,825,327,815,311,819,306,808,296,781,319" href="#" alt="Batiment M6">
+    <area shape="poly" id="M7" onclick="changeActualMap('M7');" coords="781,319,760,291,782,274,802,298" href="#" alt="Batiment M7">
+    <area shape="poly" id="M8" onclick="changeActualMap('M8');" coords="760,291,784,271,774,257,779,251,767,244,744,268" href="#" alt="Batiment M8">
+    <area shape="poly" id="M9" onclick="changeActualMap('M9');" coords="767,244,744,268,735,256,750,240,762,245,763,243,779,250" href="#" alt="Batiment M9">
+    <area shape="poly" id="Ecole_Doctorale_en_Sciences_et_Sante" onclick="changeActualMap('Ecole_Doctorale_en_Sciences_et_Sante');" coords="816,243,864,204,920,277,868,318,855,302,890,273,863,240,830,263" href="#" alt="Ecole Doctorale en Sciences et Sante">
+
+    <area shape="poly" id="P1" onclick="changeActualMap('P1');" coords="461,211,468,237,440,248,440,230,443,229,440,217" href="#" alt="Batiment P1">
+    <area shape="poly" id="P2" onclick="changeActualMap('P2');" coords="461,211,468,237,497,231,489,204" href="#" alt="Batiment P2">
+    <area shape="poly" id="P3" onclick="changeActualMap('P3');" coords="501,202,509,215,520,223,542,218,535,193" href="#" alt="Batiment P3">
+    <area shape="poly" id="P4" onclick="changeActualMap('P4');" coords="542,218,535,193,570,184,577,214,557,218,553,215" href="#" alt="Batiment P4">
+    <area shape="poly" id="P5" onclick="changeActualMap('P5');" coords="570,184,577,214,611,206,612,174" href="#" alt="Batiment P5">
+    
+    <area shape="poly" id="MN1" onclick="changeActualMap('MN1');" coords="237,519,265,513,269,541,261,545,268,573,256,577,247,546,238,547" href="#" alt="Batiment MN1">
+    <area shape="poly" id="MN2" onclick="changeActualMap('MN2');" coords="194,635,194,619,251,629,250,639" href="#" alt="Batiment MN2">
+    <area shape="poly" id="MN3" onclick="changeActualMap('MN3');" coords="168,632,181,522,194,523,183,634" href="#" alt="Batiment MN3">
+    <area shape="poly" id="HUB10" onclick="changeActualMap('HUB10');" coords="329,285,430,283,492,273,496,301,332,313" href="#" alt="Batiment HUB10">
+</map>
+
+<script>
+var test=document.getElementById("test");
+var planButton = document.getElementById("planButton");
+
+planButton.addEventListener('click', function() {
+    changeActualMap("UFRSciences");
+});
+
+function changeActualMap(str){
+    var divPlan = document.getElementById("actualMap");
+    var divPlanElement = document.getElementById("actualMapElement");
+
+    console.log(str);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        divPlanElement.innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET","php/changeMap.php?map="+str, true);
+    xmlhttp.send();
+    
+    if(str!="UFRSciences")
+    {
+        divPlan.style.backgroundColor = "#9B9B9B"
+        planButton.style.display="";
+        validateSearchWhenClick(str);
+    }
+    else
+    {
+        divPlan.style.backgroundColor = "#FFFFFF"
+        planButton.style.display="none";
+        test.innerHTML = " ";
+    }
+}
+
+function validateSearchWhenClick(nomImg) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var result = this.responseText;
+            
+            var arr = result.split('|');
+            var info = '';
+            
+            for (var i = 0; i < arr.length-1; i += 2) {
+                var type = arr[i];
+                var grouped_info = arr[i + 1].split(',');
+                if(type != "SAME")
+                {
+                    info += '<br> Type de salle : ' + type.replace(/_/g, " ") + '<br>';
+                }
+                for (var j = 0; j < grouped_info.length - 1; j += 2) {
+                    var salles = grouped_info[j];
+                    var etage = grouped_info[j + 1];
+                    if(etage!=null && etage!="")
+                    {
+                    info +=  'Etage : ' + etage.replace(/_/g, " ") + '<br>';
+                    }
+                    if(salles!=null && salles!="")
+                    {
+                    info +=  '&nbsp&nbsp&nbspSalles : ' + salles.replace(/_/g, " ") + '<br>';
+                    }
+                }
+            }
+            test.innerHTML = info;
+        }
+    };
+
+    xmlhttp.open("GET","php/InfoBatClick.php?nomImg="+nomImg, true);
+    xmlhttp.send();
+}
+
+function validateSearch() {
+    var zone = document.getElementById("Zone").value;
+    var searchInput = document.getElementById("search").value;
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var result = this.responseText;
+            
+            if(result!="NONE"){
+            changeActualMap(result);
+            }
+        }
+    };
+    xmlhttp.open("GET","php/InfoBat.php?Zone="+zone+"&Rech="+searchInput, true);
+    xmlhttp.send();
+}
+
+function validateNomIm() {
+    var zone = document.getElementById("Zone").value;
+    var searchInput = document.getElementById("search").value;
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var result = this.responseText;
+            console.log(result);
+            changeActualMap(result);
+        }
+    };
+    
+    xmlhttp.open("GET","php/NomImage.php?Zone="+zone+"&Rech="+searchInput, true);
+    xmlhttp.send();
+}
+
+
+
+</script>
